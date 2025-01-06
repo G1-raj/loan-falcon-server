@@ -42,7 +42,6 @@ const getClientsId = async (req, res) => {
         res.status(500).send(
             {
                 success: false,
-                data: error.message,
                 message: "Internal server error"
             }
         );

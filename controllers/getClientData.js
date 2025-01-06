@@ -28,7 +28,7 @@ const getClientData = async (req, res) => {
             { 
                 success: true,
                 data: clientData,
-                data: clientData
+                message: "Client data fetched successfully"
             }
         );
         

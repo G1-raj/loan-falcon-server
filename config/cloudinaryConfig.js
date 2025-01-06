@@ -18,6 +18,8 @@ const cloudinaryConnect = () => {
             }
         );
 
+        console.log("Cloudinary connected successfully");
+
     } catch (error) {
         throw new Error("Error connecting to Cloudinary", error);
     }

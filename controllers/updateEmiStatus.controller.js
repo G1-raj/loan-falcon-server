@@ -8,13 +8,23 @@ const updateEmiStatus = async (req, res) => {
         const {clientId, emiIndex, status} = req.body;
 
         if(!clientId || !emiIndex || !status) {
-            return res.status(400).json({ message: "All input is required" });
+            return res.status(400).json(
+                { 
+                    success: false,
+                    message: "All input is required" 
+                }
+            );
         }
 
         const clientData = await Client.findById(clientId);
 
         if(!clientData) {
-            return res.status(404).json({ message: "Client not found" });
+            return res.status(404).json(
+                { 
+                    success: false,
+                    message: "Client not found"
+                 }
+            );
         }
 
         const emiData = await Emi.findById(clientData.emis[0]._id);
@@ -22,10 +32,21 @@ const updateEmiStatus = async (req, res) => {
 
         await emiData.save();
 
-        res.status(200).json({ data: emiData, message: "EMI status updated successfully" });
+        res.status(200).json(
+            { 
+                success: true,
+                data: emiData, 
+                message: "EMI status updated successfully" 
+            }
+        );
         
     } catch (error) {
-        res.status(500).json({ message: "Internal server error" });
+        res.status(500).json(
+            { 
+                success: false,
+                message: "Internal server error" 
+            }
+        );
     }
 }
 

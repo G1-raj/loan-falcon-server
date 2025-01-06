@@ -7,6 +7,7 @@ import cookieParser from 'cookie-parser';
 import fileUpload from 'express-fileupload';
 
 
+
 configDotenv();
 
 
@@ -33,6 +34,9 @@ app.listen(port, () => {
 app.get("/", (req, res) => {
   res.send("Welcome to Loan Falcon API");
 });
+
+
+export default app;
 
 
 

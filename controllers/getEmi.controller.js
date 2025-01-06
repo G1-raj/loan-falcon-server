@@ -30,7 +30,8 @@ const getEmiData = async (req, res) => {
         res.status(200).json(
             { 
                 success: true,
-                data: emiData
+                data: emiData,
+                message: "EMI data fetched successfully"
             }
         );
         

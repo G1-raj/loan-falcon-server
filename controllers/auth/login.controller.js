@@ -56,7 +56,7 @@ const logIn = async (req, res) => {
                 {
                     success: true,
                     token,
-                    user: existingUser,
+                    data: existingUser,
                     message: "User Logged In successfully"
                 }
             );

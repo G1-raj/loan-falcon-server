@@ -44,7 +44,7 @@ const forgotPassword = async (req, res) => {
         res.status(200).json(
             {
                 success: true,
-                user: updatedUser,
+                data: updatedUser,
                 message: "Password updated successfully"
             }
         );
